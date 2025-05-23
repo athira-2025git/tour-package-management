@@ -1,11 +1,8 @@
 services:
   - type: web
-    name: tour-package-management
+    name: tour-management
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn tour_management_project.wsgi:application
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: tour_management_project.settings
-      - key: PYTHON_VERSION
-        value: 3.11.11
+    pythonVersion: "3.11"
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn tour_management.wsgi"
+    branch: main
