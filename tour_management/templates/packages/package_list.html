@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Available Tour Packages</h2>
+    <ul>
+    {% for package in packages %}
+        <li>{{ package.title }} - ₹{{ package.price }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
